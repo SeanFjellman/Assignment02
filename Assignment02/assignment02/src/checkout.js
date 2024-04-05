@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import './Checkout.css';
+
 
 function Checkout() {
   const navigate = useNavigate();
@@ -9,50 +11,53 @@ function Checkout() {
   const [localCart, setLocalCart] = useState(cart);
 
   const removeFromCart = (productId) => {
-    setLocalCart(currentCart => {
-      const index = currentCart.findIndex(item => item.id === productId);
-      if (index === -1) return;
+    setLocalCart((currentCart) => {
+      const index = currentCart.findIndex((item) => item.id === productId);
+      if (index === -1) return [...currentCart]; // Return a copy of the current cart if the product is not found
       const newCart = [...currentCart];
       if (newCart[index].quantity > 1) {
         newCart[index].quantity -= 1;
       } else {
         newCart.splice(index, 1);
       }
-      setLocalCart(newCart);
+      return newCart; // Always return a new array
     });
+  };
+  
+
+  const calculateTotal = () => {
+    return localCart.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
   };
 
   return (
-    <div>
-      <h2>Checkout Page</h2>
-      {localCart.length > 0 ? (
-        <div className="column">
+    <div className="checkout-page">
+      <div className="checkout-container">
+        <Payment />
+        <div className="cart-summary">
+          <h2>Cart Summary</h2>
           {localCart.map((item) => (
-            <div className="col-md-4 mb-4" key={item.id}>
-              <div className="card">
-                <img src={item.image} className="card-img-top" alt={item.title} />
-                <div className="card-body">
-                  <h3 className="card-title">{item.title}</h3>
-                  <p className="card-text"><strong>Category:</strong> {item.category}</p>
-                  <p className="card-text">{item.description}</p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <span className="text-muted">Quantity: {item.quantity}</span>
-                    <span className="text-muted price">${item.price.toFixed(2)}</span>
-                    <button className="btn btn-danger" onClick={() => removeFromCart(item.id)}>-</button>
-                  </div>
-                </div>
+            <div key={item.id} className="cart-item">
+              <img src={item.image} alt={item.title} className="cart-item-image" />
+              <div className="cart-item-info">
+                <h4>{item.title}</h4>
+                <p>Price: ${item.price}</p>
+                <p>Quantity: {item.quantity}</p>
+                <button className="btn btn-danger" onClick={() => removeFromCart(item.id)}>-</button>
               </div>
             </div>
           ))}
+          <button className="btn btn-danger" onClick={() => navigate('/')}>Return to Shop</button>
+          <div className="cart-total">
+            <h3>Total: ${calculateTotal()}</h3>
+          </div>
         </div>
-      ) : (
-        <p>Your cart is empty.</p>
-      )}
-    <button className="btn btn-danger" onClick={() => navigate('/')}>Return to Shop</button>
-      <Payment />
+      </div>
+      
     </div>
   );
 }
+
+
 
 function Payment() {
   const { register, handleSubmit, formState: { errors } } = useForm();

@@ -1,0 +1,98 @@
+/* Checkout.css */
+.checkout-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .cart-items-container {
+    width: 60%;
+  }
+  
+  .payment-container {
+    width: 35%;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form div {
+    margin-bottom: 10px;
+  }
+  
+  form label {
+    margin-bottom: 5px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  form button {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+  }
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    overflow: hidden; /* Add this to prevent overflow */
+  }
+  
+  .cart-item-image {
+    width: 80px; /* Adjust the width of the images */
+    height: auto;
+    margin-right: 10px;
+    flex-shrink: 0; /* Prevent the image from shrinking */
+  }
+  
+  .cart-item-info {
+    flex: 1; /* Allow the info section to take up the remaining space */
+    overflow: hidden; /* Add this to prevent overflow */
+  }
+  
+  .cart-item-info h4,
+  .cart-item-info p {
+    margin: 0; /* Remove default margins */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis to overflowing text */
+  }
+  
+  .btn-danger {
+    margin-left: auto; /* Push the button to the right */
+  }
+  
