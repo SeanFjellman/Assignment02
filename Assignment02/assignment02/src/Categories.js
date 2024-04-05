@@ -1,0 +1,1 @@
+export const Categories = ["RPG Game", "Action RPG", "Aventure Game", "Action", "FPS"];

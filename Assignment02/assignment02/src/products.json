@@ -1,0 +1,93 @@
+[
+    {
+      "id": 1,
+      "title": "2023 Baldurs Gate",
+      "price": 59.99,
+      "description": "Baldur’s Gate 3 is a story-rich, party-based RPG set in the universe of Dungeons & Dragons, where your choices shape a tale of fellowship and betrayal, survival and sacrifice, and the lure of absolute power.",
+      "category": "RPG Game",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg?t=1711532262",
+      "rating": { "rate": 3.9, "count": 120 }
+    },
+    {
+      "id": 2,
+      "title": "2022 Elden Ring",
+      "price": 59.99,
+      "description": "THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
+      "category": "Action RPG",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg?t=1710261394",
+      "rating": { "rate": 4.1, "count": 259 }
+    },
+    {
+      "id": 3,
+      "title": "2021 It Takes Two",
+      "price": 39.99,
+      "description": "Embark on the craziest journey of your life in It Takes Two. Invite a friend to join for free with Friend’s Pass and work together across a huge variety of gleefully disruptive gameplay challenges. Winner of GAME OF THE YEAR at the Game Awards 2021.",
+      "category": "Aventure Game",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg?t=1705372806",
+      "rating": { "rate": 4.7, "count": 500 }
+    },
+    {
+      "id": 4,
+      "title": "2020 The Last of Us Part II",
+      "price": 39.99,
+      "description": "The Last of Us Part II, developed by Naughty Dog and published by Sony Interactive Entertainment, is a Game of the Year winner and a sequel to the acclaimed 2013 game 'The Last of Us.' It continues the stories of Ellie and Abby, whose paths intertwine in a narrative focused on revenge, morality, and justice, setting a high standard for video game storytelling.",
+      "category": "Action",
+      "image": "https://i.ytimg.com/vi_webp/eOiUtRF8k28/maxresdefault.webp",
+      "rating": { "rate": 2.1, "count": 430 }
+    },
+    {
+      "id": 5,
+      "title": "2019 Sekiro: Shadows Die Twice",
+      "price": 59.99,
+      "description": "Game of the Year - The Game Awards 2019 Best Action Game of 2019 - IGN Carve your own clever path to vengeance in the award winning adventure from developer FromSoftware, creators of Bloodborne and the Dark Souls series. Take Revenge. Restore Your Honor. Kill Ingeniously.",
+      "category": "Action",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/814380/header.jpg?t=1678991267",
+      "rating": { "rate": 4.6, "count": 400 }
+    },
+    {
+      "id": 6,
+      "title": "2018 God of War",
+      "price": 49.99,
+      "description": "His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive… and teach his son to do the same.",
+      "category": "Action",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg?t=1695758729",
+      "rating": { "rate": 3.9, "count": 70 }
+    },
+    {
+      "id": 7,
+      "title": "2017 The Legend of Zelda: Breath of the Wild",
+      "price": 59.99,
+      "description": "Forget everything you know about The Legend of Zelda games. Step into a world of discovery, exploration, and adventure in The Legend of Zelda: Breath of the Wild, a boundary-breaking new game in the acclaimed series. Travel across vast fields, through forests, and to mountain peaks as you discover what has become of the kingdom of Hyrule in this stunning Open-Air Adventure. Now on Nintendo Switch, your journey is freer and more open than ever. Take your system anywhere, and adventure as Link any way you like.",
+      "category": "Action Adventure",
+      "image": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000000025/7137262b5a64d921e193653f8aa0b722925abc5680380ca0e18a5cfd91697f58",
+      "rating": { "rate": 3, "count": 400 }
+    },
+    {
+      "id": 8,
+      "title": "2016 Overwatch",
+      "price": 0,
+      "description": "DISCLAIMER: You can no longer play the origional version of this game. Only Overwatch 2 the following information it related to the new game. Overwatch 2 is a critically acclaimed, team-based shooter game set in an optimistic future with an evolving roster of heroes. Team up with friends and jump in today.",
+      "category": "FPS",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/2357570/header.jpg?t=1711555325",
+      "rating": { "rate": 1.9, "count": 100 }
+    },
+    {
+      "id": 9,
+      "title": "2015 The Witcher 3: Wild Hunt",
+      "price": 39.99,
+      "description": "You are Geralt of Rivia, mercenary monster slayer. Before you stands a war-torn, monster-infested continent you can explore at will. Your current contract? Tracking down Ciri — the Child of Prophecy, a living weapon that can alter the shape of the world.",
+      "category": "Action RPG",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg?t=1710411171",
+      "rating": { "rate": 3.3, "count": 203 }
+    },
+    {
+      "id": 10,
+      "title": "2014 Dragon Age: Inquisition",
+      "price": 39.99,
+      "description": "Winner of over 130 Game of the Year awards, discover the definitive Dragon Age: Inquisition experience. The Game of the Year Edition includes the critically acclaimed game, all three official add-ons - Jaws of Hakkon, The Descent, and Trespasser - and more.",
+      "category": "Action RPG",
+      "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1222690/header.jpg?t=1668811031",
+      "rating": { "rate": 2.9, "count": 470 }
+    }
+  ]
+  

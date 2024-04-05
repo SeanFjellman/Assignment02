@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Light theme (default) */
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+    --card-background-color: #f8f9fa;
+    --btn-background-color: #007bff;
+    --btn-text-color: #fff;
+  }
+  
+  /* Dark theme */
+  [data-theme='dark'] {
+    --background-color: #121212;
+    --text-color: #fff;
+    --card-background-color: #343a40;
+    --btn-background-color: #007bff;
+    --btn-text-color: #fff;
+  }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  .card {
+    background-color: var(--card-background-color);
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color); /* Applies text color to all text within body */
+  }
+  
+  /* Optionally, specify for certain elements if a global change isn't desired */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+  }
+  
+  p, span, a {
+    color: var(--text-color);
+  }
+
+  .card-title, .card-text {
+    color: var(--text-color);
+  }
+  
+  .price {
+    color: var(--text-color);
+  }
+  
+
+  /* button zize*/
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* Adjust the gap between buttons as needed */
+}
+
+.full-width-button {
+  flex: 1; /* Makes buttons grow to fill the container */
+}
+
+
+
+
+.checkout-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* Adjusts horizontal positioning */
+  align-items: flex-start; /* Aligns items to the top */
+  width: 100%; /* Full screen width */
+  height: 100vh; /* Adjusts height to fill the viewport */
+  position: relative; /* Adjust as needed */
+}
+
+.cart-items-container {
+  flex-grow: 2; /* Allows container to grow */
+  /* No changes needed here unless you want specific width management */
+}
+
+.payment-container {
+  flex-grow: 1; /* Allows container to grow but less than cart-items-container */
+  padding: 20px; /* Internal spacing */
+  margin-left: auto; /* Pushes to the right */
+  /* Ensure it doesn't grow beyond its content width */
+  width: auto; /* Adjust based on content width */
+}
+
+/* Ensure the payment container does not overlap with other elements */
+.payment-container {
+  z-index: 10; /* Adjust as needed to ensure it's on top */
+}
+
+.payment-container {
+  position: fixed; /* Fixed position relative to the viewport */
+  top: 0; /* Align to the top of the viewport */
+  right: 600px; /* Increase this value to move the container more to the left */
+  width: 700px; /* Or whatever width you prefer */
+  height: auto; /* Adjust based on content, or set a specific height */
+  padding: 20px; /* Internal spacing */
+  z-index: 1000; /* Ensures it's above other content */
+  background-color: var(--card-background-color); /* Optional: ensures text is readable */
+}
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+
