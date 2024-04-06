@@ -10,6 +10,8 @@ const Shop = () => {
   const [cart, setCart] = useState([]);
   const [activeCategory, setActiveCategory] = useState('All'); // New state for active category
   const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState('');
+
 
   // Function to add a product to the cart
   const addToCart = (productToAdd) => {
@@ -47,9 +49,15 @@ const Shop = () => {
     return cart.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
   };
 
+  
   const [isDarkMode, setIsDarkMode] = useState(false); // State to manage dark mode
 
-  const filteredProducts = activeCategory === 'All' ? products : products.filter(product => product.category === activeCategory);
+  const filteredProducts = products.filter((product) => {
+    return (
+      (activeCategory === 'All' || product.category === activeCategory) &&
+      product.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  });
 
 
   Categories.map(function(name){return 'Hi '+name});
@@ -84,6 +92,21 @@ const Shop = () => {
   return (
     <div className="container mt-5">
       <div className="mb-3">
+        {/* Search Bar */}
+        <input
+          type="text"
+          className="form-control mb-3"
+          placeholder="Search products..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        {/* Clear Search Button */}
+        <button
+          className="btn btn-secondary mb-3"
+          onClick={() => setSearchQuery('')}
+        >
+          Clear Search
+        </button>
         {/* Category buttons */}
         <div className="mb-3 buttons-container">
   <button className={`btn ${activeCategory === 'All' ? 'btn-primary' : 'btn-secondary'} full-width-button`} onClick={() => setActiveCategory('All')}>All Categories</button>
