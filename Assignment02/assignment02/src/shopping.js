@@ -187,34 +187,31 @@ const Shop = () => {
           <button className="btn btn-dark mr-2" onClick={() => setIsDarkMode(true)}>Dark Mode On</button>
         <button className="btn btn-light" onClick={() => setIsDarkMode(false)}>Dark Mode Off</button>
       </div>
-      {/* Cart Summary */}
+     {/* Cart Summary */}
 <div className="mt-5">
   <div className="card">
     <div className="card-header">Cart Summary</div>
     <div className="card-body">
       {cart.length > 0 ? (
         <ul className="list-unstyled">
-        {cart.map((item) => (
-          <li key={item.id} className="d-flex align-items-center">
-            {item.title} - Quantity:
-            <input
-              type="number"
-              className="form-control mx-2"
-              value={item.quantity}
-              onChange={(e) => updateQuantity(item, e.target.value)}
-              min="0"
-              style={{ width: `${Math.max(3, item.quantity.toString().length + 5)}ch` }}
-            />
-          </li>
-        ))}
-      </ul>
-      
+          {cart.map((item) => (
+            <li key={item.id} className="d-flex align-items-center">
+              {item.title} - Quantity: {item.quantity}
+            </li>
+          ))}
+        </ul>
       ) : (
         <p>Your cart is empty.</p>
       )}
       <p>Total Items: {cart.reduce((acc, item) => acc + item.quantity, 0)}</p>
       <p>Total Price: ${calculateTotal()}</p>
-      <button className="btn btn-primary" onClick={() => navigate('/checkout', { state: { cart: cart } })}>CHECKOUT</button>
+      <button
+        className="btn btn-primary"
+        onClick={() => navigate('/checkout', { state: { cart: cart } })}
+        disabled={cart.length === 0}  // Disable the button if the cart is empty
+      >
+        CHECKOUT
+      </button>
     </div>
   </div>
 </div>
