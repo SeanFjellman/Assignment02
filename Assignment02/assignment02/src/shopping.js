@@ -12,6 +12,7 @@ const Shop = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
 
+  
   useEffect(() => {
     const savedCart = localStorage.getItem('cart');
     if (savedCart) {
@@ -19,7 +20,14 @@ const Shop = () => {
     }
   }, []);
 
-
+  useEffect(() => {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+      setCart(JSON.parse(savedCart));
+    }
+  }, []);
+  
+ 
   // Function to add a product to the cart
   const addToCart = (productToAdd) => {
     setCart((currentCart) => {
@@ -96,6 +104,10 @@ const Shop = () => {
     </div>
   ));
   const updateQuantity = (item, newQuantity) => {
+
+
+    
+
     const quantity = parseInt(newQuantity, 10);
   
     if (quantity === 0) {
@@ -190,7 +202,7 @@ const Shop = () => {
               className="form-control mx-2"
               value={item.quantity}
               onChange={(e) => updateQuantity(item, e.target.value)}
-              min="1"
+              min="0"
               style={{ width: `${Math.max(3, item.quantity.toString().length + 5)}ch` }}
             />
           </li>

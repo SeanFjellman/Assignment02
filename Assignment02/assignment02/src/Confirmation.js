@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Confirmation.css'; // Assuming you have a separate CSS file for styling
 
@@ -7,6 +9,11 @@ function Confirmation() {
   const { cart, userData } = state;
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Clear the cart from localStorage
+    localStorage.removeItem('cart');
+  }, []);
+
   const totalAmount = cart.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2);
 
   const redactedCardNumber = userData.cardNumber.replace(/\d{12}(\d{4})/, '************$1');
@@ -14,6 +21,8 @@ function Confirmation() {
   const handleReturnToShop = () => {
     navigate('/');
   };
+
+  
 
   return (
     <div className="confirmation-container">
