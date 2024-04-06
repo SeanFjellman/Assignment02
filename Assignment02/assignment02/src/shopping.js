@@ -12,6 +12,13 @@ const Shop = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
 
+  useEffect(() => {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+      setCart(JSON.parse(savedCart));
+    }
+  }, []);
+
 
   // Function to add a product to the cart
   const addToCart = (productToAdd) => {
@@ -88,7 +95,26 @@ const Shop = () => {
       </div>
     </div>
   ));
-
+  const updateQuantity = (item, newQuantity) => {
+    const quantity = parseInt(newQuantity, 10);
+  
+    if (quantity === 0) {
+      // Remove the item from the cart if the quantity is 0
+      setCart((currentCart) => currentCart.filter((cartItem) => cartItem.id !== item.id));
+    } else {
+      // Update the quantity of the item in the cart
+      setCart((currentCart) => {
+        return currentCart.map((cartItem) => {
+          if (cartItem.id === item.id) {
+            return { ...cartItem, quantity: quantity };
+          }
+          return cartItem;
+        });
+      });
+    }
+  };
+  
+  
   return (
     <div className="container mt-5">
       <div className="mb-3">
@@ -150,18 +176,38 @@ const Shop = () => {
         <button className="btn btn-light" onClick={() => setIsDarkMode(false)}>Dark Mode Off</button>
       </div>
       {/* Cart Summary */}
-      <div className="mt-5">
-        <div className="card">
-          <div className="card-header">Cart Summary</div>
-          <div className="card-body">
-            <p>Total Items: {cart.reduce((acc, item) => acc + item.quantity, 0)}</p>
-            <p>Total Price: ${calculateTotal()}</p>
-            <button className="btn btn-primary" onClick={() => navigate('/checkout', { state: { cart: cart } })}>CHECKOUT</button>
+<div className="mt-5">
+  <div className="card">
+    <div className="card-header">Cart Summary</div>
+    <div className="card-body">
+      {cart.length > 0 ? (
+        <ul className="list-unstyled">
+        {cart.map((item) => (
+          <li key={item.id} className="d-flex align-items-center">
+            {item.title} - Quantity:
+            <input
+              type="number"
+              className="form-control mx-2"
+              value={item.quantity}
+              onChange={(e) => updateQuantity(item, e.target.value)}
+              min="1"
+              style={{ width: `${Math.max(3, item.quantity.toString().length + 5)}ch` }}
+            />
+          </li>
+        ))}
+      </ul>
+      
+      ) : (
+        <p>Your cart is empty.</p>
+      )}
+      <p>Total Items: {cart.reduce((acc, item) => acc + item.quantity, 0)}</p>
+      <p>Total Price: ${calculateTotal()}</p>
+      <button className="btn btn-primary" onClick={() => navigate('/checkout', { state: { cart: cart } })}>CHECKOUT</button>
+    </div>
+  </div>
+</div>
 
 
-          </div>
-        </div>
-      </div>
     </div>
   );
   

@@ -1,133 +1,113 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container {
+  max-width: 1200px;
+  margin: auto;
+  font-family: Arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.mb-3 {
+  margin-bottom: 1rem;
 }
 
-/* Light theme (default) */
-:root {
-    --background-color: #fff;
-    --text-color: #000;
-    --card-background-color: #f8f9fa;
-    --btn-background-color: #007bff;
-    --btn-text-color: #fff;
-  }
-  
-  /* Dark theme */
-  [data-theme='dark'] {
-    --background-color: #121212;
-    --text-color: #fff;
-    --card-background-color: #343a40;
-    --btn-background-color: #007bff;
-    --btn-text-color: #fff;
-  }
-
-  body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-  }
-
-  .card {
-    background-color: var(--card-background-color);
-  }
-  
-  body {
-    background-color: var(--background-color);
-    color: var(--text-color); /* Applies text color to all text within body */
-  }
-  
-  /* Optionally, specify for certain elements if a global change isn't desired */
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--text-color);
-  }
-  
-  p, span, a {
-    color: var(--text-color);
-  }
-
-  .card-title, .card-text {
-    color: var(--text-color);
-  }
-  
-  .price {
-    color: var(--text-color);
-  }
-  
-
-  /* button zize*/
 .buttons-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px; /* Adjust the gap between buttons as needed */
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .full-width-button {
-  flex: 1; /* Makes buttons grow to fill the container */
+  flex-grow: 1;
+  margin-right: 0.5rem;
+  text-align: center;
 }
 
+.btn-primary, .btn-secondary {
+  background-color: #f0c14b;
+  border-color: #a88734;
+  color: #111;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
 
+.btn-primary:hover, .btn-secondary:hover {
+  background-color: #e7b933;
+}
 
+.btn-dark {
+  background-color: #232f3e;
+  color: #fff;
+}
 
-.checkout-container {
+.btn-light {
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #ddd;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  margin-bottom: 0.5rem;
+}
+
+.d-flex {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start; /* Adjusts horizontal positioning */
-  align-items: flex-start; /* Aligns items to the top */
-  width: 100%; /* Full screen width */
-  height: 100vh; /* Adjusts height to fill the viewport */
-  position: relative; /* Adjust as needed */
+  align-items: center;
 }
 
-.cart-items-container {
-  flex-grow: 2; /* Allows container to grow */
-  /* No changes needed here unless you want specific width management */
+.justify-content-between {
+  justify-content: space-between;
 }
 
-.payment-container {
-  flex-grow: 1; /* Allows container to grow but less than cart-items-container */
-  padding: 20px; /* Internal spacing */
-  margin-left: auto; /* Pushes to the right */
-  /* Ensure it doesn't grow beyond its content width */
-  width: auto; /* Adjust based on content width */
+.btn-info {
+  background-color: #17a2b8;
+  color: #fff;
+  border: none;
 }
 
-/* Ensure the payment container does not overlap with other elements */
-.payment-container {
-  z-index: 10; /* Adjust as needed to ensure it's on top */
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
 }
 
-.payment-container {
-  position: fixed; /* Fixed position relative to the viewport */
-  top: 0; /* Align to the top of the viewport */
-  right: 600px; /* Increase this value to move the container more to the left */
-  width: 700px; /* Or whatever width you prefer */
-  height: auto; /* Adjust based on content, or set a specific height */
-  padding: 20px; /* Internal spacing */
-  z-index: 1000; /* Ensures it's above other content */
-  background-color: var(--card-background-color); /* Optional: ensures text is readable */
+.price {
+  font-weight: bold;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
 
-
-
-
-
-
-  
-  
-  
-  
-
-
+.form-control {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
